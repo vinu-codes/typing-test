@@ -20,7 +20,7 @@ You can find the React version & Vanilla version in the navigation of the applic
 - styled-components
 - fetch API
 
-## 📝 How It Works
+## 📝 What I've Learnt
 
 
 ## 💡 Improvements
