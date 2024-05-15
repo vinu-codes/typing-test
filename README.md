@@ -1,6 +1,6 @@
 # TypeTest
 
-## Idea / Curiousity 
+## Idea
 I built this project initially using **Vanilla JavaScript**. 
 I then refactored using **React.js** to showcase the power and efficiency of React.js library. 
 You can find the React version & Vanilla version in the navigation of the application.
