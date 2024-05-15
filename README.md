@@ -1,8 +1,9 @@
 # TypeTest
 
 ## Idea / Curiousity 
-I built this project initially using **Vanilla JavaScript**. You can find the vanilla JavaScript version in the vanilla route of the application.
-I then refactored using **React.js** to showcase the power and efficiency of React.js library. You can find the React version in the react route of the application.
+I built this project initially using **Vanilla JavaScript**. 
+I then refactored using **React.js** to showcase the power and efficiency of React.js library. 
+You can find the React version & Vanilla version in the navigation of the application.
 
 ## 🚀 Features
 
