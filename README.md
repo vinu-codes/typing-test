@@ -21,7 +21,6 @@ I then refactored using  ⚛️ React.js to showcase the power and efficiency of
 
 ## 📝 How It Works
 
-TypeRush picks a passage for you to type. As you type, it keeps track of how fast and accurate you are, and how many points you get. It shows mistakes clearly and warns you about Caps Lock. After each round, you get a full breakdown of your performance to encourage you to keep improving.
 
 ## 💡 Improvements
 - **Caps Lock Warning:** It tells you if you've accidentally left Caps Lock on to avoid errors.
