@@ -2,11 +2,11 @@ import React, { useEffect } from 'react'
 import { Container } from './Vanilla.styled'
 
 const executeVanilla = () => {
-  // const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
+  const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
 
-  // const quoteElement = document.getElementById('quote')
-  // const quoteInputElement = document.getElementById('quoteInput')
-  // const timerElement = document.getElementById('timer')
+  const quoteElement = document.getElementById('quote')
+  const quoteInputElement = document.getElementById('quoteInput')
+  const timerElement = document.getElementById('timer')
 
   quoteInputElement.addEventListener('input', () => {
     // get all the spans in the quoteElement
