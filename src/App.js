@@ -2,10 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { Vanilla } from '@features/Vanilla'
-
-const ReactPage = () => {
-  return <div>React</div>
-}
+import { ReactFeature } from '@features/ReactFeature'
 
 const App = () => (
   <Router>
@@ -22,7 +19,7 @@ const App = () => (
       </nav>
     </div>
     <Routes>
-      <Route path="/" element={<ReactPage />}></Route>
+      <Route path="/" element={<ReactFeature />}></Route>
       <Route path="/vanilla" element={<Vanilla />}></Route>
     </Routes>
   </Router>
