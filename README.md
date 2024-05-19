@@ -12,6 +12,8 @@ You can find the React version & Vanilla version in the navigation of the applic
 - **Summary After Each Test:** When you finish a test, you get a detailed report of your speed, score, and mistakes.
 - **Keep Practicing:** You can start new tests over and over to keep getting better.
 - **Nice and Simple Design:** The design is clean and easy to use, helping you focus on practicing.
+- **Caps Lock Warning:** It tells you if you've accidentally left Caps Lock on to avoid errors.
+- **Errors:** It tells you how many errors you've accumulated per round.
 
 
 ## 🛠️ Technologies
@@ -24,7 +26,6 @@ You can find the React version & Vanilla version in the navigation of the applic
 
 
 ## 💡 Improvements
-- **Caps Lock Warning:** It tells you if you've accidentally left Caps Lock on to avoid errors.
 - **Summary After Each Test:** When you finish a test, you get a detailed report of your speed, score, and mistakes.
 
 
