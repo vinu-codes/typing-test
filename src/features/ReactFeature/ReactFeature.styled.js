@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   background-color: transparent;
   box-sizing: border-box;
-  background: #1e0555;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@ const Container = styled.div`
   .quote-input {
     font-family: 'Roboto', sans-serif;
     background: transparent;
-    border: 2px solid #a1922e;
+    border: 2px solid lightgrey;
     outline: none;
     width: 100%;
     height: 8rem;
@@ -29,15 +29,20 @@ const Container = styled.div`
   }
 
   .timer {
-    color: palegoldenrod;
+    color: black;
     position: absolute;
     top: 5rem;
     font-size: 3rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 30px;
+    }
   }
 
   .container {
-    background: palegoldenrod;
+    background: transparent;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -47,7 +52,7 @@ const Container = styled.div`
   }
 
   .controls {
-    background: palegoldenrod;
+    background: transparent;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;

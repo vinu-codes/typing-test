@@ -61,12 +61,12 @@ const checkIfCorrect = (result) => {
 }
 
 const calculateErrors = (result) => {
-  if (!result || !result.length) return 'Errors: 0'
+  if (!result || !result.length) return '0'
   const errors = result.filter((item) => {
     return item.className === 'incorrect'
   })
   const total = errors.length
-  return `Errors: ${total}`
+  return total
 }
 
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
@@ -76,7 +76,7 @@ const ReactFeature = () => {
   const [result, setResult] = useState([])
   const [caps, setCaps] = useState(false)
   const [modal, setModal] = useState(false)
-  const [timeRemaining, setTimeRemaining] = useState(3)
+  const [timeRemaining, setTimeRemaining] = useState(3000)
 
   const getRandomQuote = async () => {
     try {
@@ -85,7 +85,7 @@ const ReactFeature = () => {
       const splitData = data.content.split('')
       const newDataStructure = applyDataStructure(splitData)
       setResult(newDataStructure)
-      setTimeRemaining(3)
+      setTimeRemaining(3000)
     } catch (error) {
       console.error(error)
       setResult([])
@@ -160,10 +160,13 @@ const ReactFeature = () => {
       {' '}
       {!!modal && (
         <Modal title="Report" callback={handleModal}>
-          <ModalContents callback={handleCallback}>{errors}</ModalContents>
+          <ModalContents data={result} callback={handleCallback}>
+            {errors}
+          </ModalContents>
         </Modal>
       )}
       <div className="timer" id="timer">
+        <span>TIMER</span>
         {timeRemaining}
       </div>
       <div className="controls" id="controls">

@@ -7,23 +7,43 @@ import styled from 'styled-components'
 import './styles.css'
 
 const NavBar = styled.nav`
-  background-color: white;
+  background-color: #121716;
   border-bottom: 2px solid black;
   padding: 12px;
+  display: flex;
+  span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-left: auto;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
+    li {
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
     a {
       text-decoration: none;
-      color: black;
+      color: #596764;
       font-weight: bold;
-      font-size: 21px;
+      font-size: 16px;
       font-family: sans-serif;
       cursor: pointer;
+      &:hover {
+        background: #2c3534;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+      }
     }
   }
 `
@@ -32,6 +52,7 @@ const App = () => (
   <Router>
     <div>
       <NavBar>
+        <span>TypeTest</span>
         <ul>
           <li>
             <Link to="/">React</Link>
