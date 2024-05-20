@@ -49,15 +49,6 @@ const updateDataStructure = (inputValue, result) => {
   return output
 }
 
-const calculateErrors = (result) => {
-  if (!result.length || !result) return 'Errors:'
-  const errors = result.filter((item) => {
-    return item.className === 'incorrect'
-  })
-  const total = errors.length
-  return `Errors: ${total}`
-}
-
 const checkIfCorrect = (result) => {
   console.log({ result })
   if (!result.length || !result) return false
@@ -69,6 +60,15 @@ const checkIfCorrect = (result) => {
   return output
 }
 
+const calculateErrors = (result) => {
+  if (!result.length || !result) return 'Errors:'
+  const errors = result.filter((item) => {
+    return item.className === 'incorrect'
+  })
+  const total = errors.length
+  return `Errors: ${total}`
+}
+
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
 
 const ReactFeature = () => {
@@ -76,7 +76,8 @@ const ReactFeature = () => {
   const [result, setResult] = useState([])
   const [caps, setCaps] = useState(false)
   const [modal, setModal] = useState(true)
-  const [timer, setTimer] = useState(false)
+  const [timer, setTimer] = useState(0)
+  const [errors, setErrors] = useState('Errors: 0')
 
   const getRandomQuote = async () => {
     try {
@@ -85,7 +86,7 @@ const ReactFeature = () => {
       const splitData = data.content.split('')
       const newDataStructure = applyDataStructure(splitData)
       setResult(newDataStructure)
-      setTimer(true)
+      // setTimer(true)
     } catch (error) {
       console.error(error)
       setResult([])
@@ -142,11 +143,11 @@ const ReactFeature = () => {
         </Modal>
       )}
       <div className="timer" id="timer">
-        0
+        {timer}
       </div>
       <div className="controls" id="controls">
         <div className="error" id="error">
-          {calculateErrors(result)}
+          {errors ? errors : 'Errors: 0'}
         </div>
         <div className="caps" id="caps">
           {!!caps ? 'Caps Lock: on' : 'Caps Lock: off'}
