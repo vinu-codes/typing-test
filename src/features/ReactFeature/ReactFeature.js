@@ -61,7 +61,7 @@ const checkIfCorrect = (result) => {
 }
 
 const calculateErrors = (result) => {
-  if (!result.length || !result) return 'Errors:'
+  if (!result || !result.length) return 'Errors: 0'
   const errors = result.filter((item) => {
     return item.className === 'incorrect'
   })
@@ -75,9 +75,8 @@ const ReactFeature = () => {
   const [inputValue, setInputValue] = useState('')
   const [result, setResult] = useState([])
   const [caps, setCaps] = useState(false)
-  const [modal, setModal] = useState(true)
-  const [timer, setTimer] = useState(0)
-  const [errors, setErrors] = useState('Errors: 0')
+  const [modal, setModal] = useState(false)
+  const [timeRemaining, setTimeRemaining] = useState(3)
 
   const getRandomQuote = async () => {
     try {
@@ -86,12 +85,32 @@ const ReactFeature = () => {
       const splitData = data.content.split('')
       const newDataStructure = applyDataStructure(splitData)
       setResult(newDataStructure)
-      // setTimer(true)
+      setTimeRemaining(3)
     } catch (error) {
       console.error(error)
       setResult([])
     }
   }
+  useEffect(() => {
+    // whenever we use a window function, we need to assign it to a variable, so we can do something with it
+    // reference to the interval
+    const intervalId = setInterval(() => {
+      setTimeRemaining((timeRemaining) => Math.max(timeRemaining - 1, 0))
+    }, 1000)
+
+    // setting the interval to be cleared when the timeRemaining is 0
+    if (timeRemaining === 0) {
+      clearInterval(intervalId)
+    }
+    // clearing the setInterval
+    return () => clearInterval(intervalId)
+  }, [])
+
+  useEffect(() => {
+    if (timeRemaining === 0) {
+      setModal(true)
+    }
+  }, [timeRemaining])
 
   useEffect(() => {
     setResult(updateDataStructure(inputValue, result))
@@ -100,14 +119,6 @@ const ReactFeature = () => {
   useEffect(() => {
     getRandomQuote()
   }, [])
-
-  useEffect(() => {
-    if (checkIfCorrect(result)) {
-      setModal(true)
-      getRandomQuote()
-      setInputValue('')
-    }
-  }, [result])
 
   const onChange = (e) => {
     const value = e.target.value
@@ -124,6 +135,14 @@ const ReactFeature = () => {
     setModal(value)
   }
 
+  const handleCallback = ({ action, value }) => {
+    if (action === 'play_again') {
+      setModal(false)
+      getRandomQuote()
+      setInputValue('')
+    }
+  }
+
   const renderApiQuote = () => {
     return result.map((item, index) => {
       return (
@@ -134,16 +153,18 @@ const ReactFeature = () => {
     })
   }
 
+  const errors = calculateErrors(result)
+
   return (
     <Container>
       {' '}
       {!!modal && (
         <Modal title="Report" callback={handleModal}>
-          <ModalContents />
+          <ModalContents callback={handleCallback}>{errors}</ModalContents>
         </Modal>
       )}
       <div className="timer" id="timer">
-        {timer}
+        {timeRemaining}
       </div>
       <div className="controls" id="controls">
         <div className="error" id="error">
