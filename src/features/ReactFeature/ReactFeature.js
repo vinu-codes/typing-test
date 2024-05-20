@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Container, SpanQuote } from './ReactFeature.styled'
 import { Modal } from '@common/Modal'
+import { ModalContents } from '@components/ModalContents'
+import { set } from 'ramda'
 
 const applyDataStructure = (arg) => {
   if (!arg || !arg.length) return []
@@ -73,7 +75,8 @@ const ReactFeature = () => {
   const [inputValue, setInputValue] = useState('')
   const [result, setResult] = useState([])
   const [caps, setCaps] = useState(false)
-  const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(true)
+  const [timer, setTimer] = useState(false)
 
   const getRandomQuote = async () => {
     try {
@@ -82,6 +85,7 @@ const ReactFeature = () => {
       const splitData = data.content.split('')
       const newDataStructure = applyDataStructure(splitData)
       setResult(newDataStructure)
+      setTimer(true)
     } catch (error) {
       console.error(error)
       setResult([])
@@ -115,6 +119,10 @@ const ReactFeature = () => {
     }
   }
 
+  const handleModal = ({ value }) => {
+    setModal(value)
+  }
+
   const renderApiQuote = () => {
     return result.map((item, index) => {
       return (
@@ -128,7 +136,11 @@ const ReactFeature = () => {
   return (
     <Container>
       {' '}
-      <Modal></Modal>
+      {!!modal && (
+        <Modal title="Report" callback={handleModal}>
+          <ModalContents />
+        </Modal>
+      )}
       <div className="timer" id="timer">
         0
       </div>

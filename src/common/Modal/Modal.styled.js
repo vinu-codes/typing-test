@@ -38,7 +38,7 @@ const ModalHeader = styled.div`
     font-size: 24px;
     margin: 0;
     padding-bottom: 8px;
-    color: blue;
+    color: black;
   }
 `
 
@@ -55,7 +55,7 @@ const ModalOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: #f0f4f8;
 `
 
 const ModalBody = styled.div`
