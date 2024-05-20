@@ -88,4 +88,16 @@ const Container = styled.div`
   }
 `
 
-export { Container }
+const SpanQuote = styled.span`
+  &.correct {
+    color: green;
+  }
+  &.incorrect {
+    color: red;
+  }
+  &.item {
+    color: black;
+  }
+`
+
+export { Container, SpanQuote }

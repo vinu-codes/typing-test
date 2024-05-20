@@ -1,18 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container } from './ReactFeature.styled'
-import styled from 'styled-components'
-
-const SpanQuote = styled.span`
-  &.correct {
-    color: green;
-  }
-  &.incorrect {
-    color: red;
-  }
-  &.item {
-    color: black;
-  }
-`
+import { Container, SpanQuote } from './ReactFeature.styled'
 
 const applyDataStructure = (arg) => {
   if (!arg || !arg.length) return []
