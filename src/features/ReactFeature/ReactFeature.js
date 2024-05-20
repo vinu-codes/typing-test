@@ -55,14 +55,15 @@ const calculateErrors = (result) => {
   return `Errors: ${total}`
 }
 
-const generateNewQuote = (result) => {
+const checkIfCorrect = (result) => {
   console.log({ result })
-  if (!result.length || !result) return []
+  if (!result.length || !result) return false
 
   const output = result.every((item) => {
     return item.className === 'correct'
   })
-  console.log({ output })
+
+  return output
 }
 
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random'
@@ -92,6 +93,13 @@ const ReactFeature = () => {
   useEffect(() => {
     getRandomQuote()
   }, [])
+
+  useEffect(() => {
+    if (checkIfCorrect(result)) {
+      getRandomQuote()
+      setInputValue('')
+    }
+  }, [result])
 
   const onChange = (e) => {
     const value = e.target.value
