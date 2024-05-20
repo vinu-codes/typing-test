@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Container, SpanQuote } from './ReactFeature.styled'
+import { Modal } from '@common/Modal'
 
 const applyDataStructure = (arg) => {
   if (!arg || !arg.length) return []
@@ -72,6 +73,7 @@ const ReactFeature = () => {
   const [inputValue, setInputValue] = useState('')
   const [result, setResult] = useState([])
   const [caps, setCaps] = useState(false)
+  const [modal, setModal] = useState(false)
 
   const getRandomQuote = async () => {
     try {
@@ -96,6 +98,7 @@ const ReactFeature = () => {
 
   useEffect(() => {
     if (checkIfCorrect(result)) {
+      setModal(true)
       getRandomQuote()
       setInputValue('')
     }
@@ -125,6 +128,7 @@ const ReactFeature = () => {
   return (
     <Container>
       {' '}
+      <Modal></Modal>
       <div className="timer" id="timer">
         0
       </div>
