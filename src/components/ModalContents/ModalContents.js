@@ -19,15 +19,17 @@ const Button = styled.button`
   font-size: 16px;
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
 `
 
-const ModalContents = () => {
+const ModalContents = ({ children, callback, data }) => {
   return (
     <Container>
-      <div className="wpm">Words Per Minute:</div>
-      <div className="mistakes">Mistakes:</div>
-      <div className="time">Total Time:</div>
-      <Button>Play Again!</Button>
+      <div className="time">Total Time: 30 min</div>
+      <div className="mistakes">Mistakes: {children}</div>
+      <Button onClick={() => callback({ action: 'play_again', value: true })}>
+        Play Again!
+      </Button>
     </Container>
   )
 }

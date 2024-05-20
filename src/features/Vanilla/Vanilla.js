@@ -92,13 +92,13 @@ const Vanilla = () => {
       <div className="timer" id="timer">
         0
       </div>
-      <div className="controls" id="controls">
-        <div className="score" id="score"></div>
-        <div className="caps" id="caps"></div>
-      </div>
       <div className="container">
         <div className="quote-display" id="quote"></div>
         <textarea id="quoteInput" className="quote-input" autoFocus></textarea>
+        <div className="controls" id="controls">
+          <div className="score" id="score"></div>
+          <div className="caps" id="caps"></div>
+        </div>
       </div>
     </Container>
   )

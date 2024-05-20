@@ -7,46 +7,84 @@ import styled from 'styled-components'
 import './styles.css'
 
 const NavBar = styled.nav`
-  background-color: white;
+  background-color: #121716;
   border-bottom: 2px solid black;
   padding: 12px;
+  display: flex;
+  align-items: center;
+  span {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-left: auto;
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
+    li {
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+    }
     a {
       text-decoration: none;
-      color: black;
+      color: grey;
       font-weight: bold;
-      font-size: 21px;
+      font-size: 16px;
       font-family: sans-serif;
       cursor: pointer;
+      &:hover {
+        background: lightgrey;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+      }
     }
   }
 `
 
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+`
+
 const App = () => (
-  <Router>
-    <div>
-      <NavBar>
-        <ul>
-          <li>
-            <Link to="/">React</Link>
-          </li>
-          <li>
-            <Link to="/vanilla">Vanilla</Link>
-          </li>
-        </ul>
-      </NavBar>
-    </div>
-    <Routes>
-      <Route path="/" element={<ReactFeature />}></Route>
-      <Route path="/vanilla" element={<Vanilla />}></Route>
-    </Routes>
-  </Router>
+  <>
+    <Router>
+      <div>
+        <NavBar>
+          <span>TypeTest 💬</span>
+          <ul>
+            <li>
+              <Link to="/">React</Link>
+            </li>
+            <li>
+              <Link to="/vanilla">Vanilla</Link>
+            </li>
+          </ul>
+        </NavBar>
+      </div>
+      <Routes>
+        <Route path="/" element={<ReactFeature />}></Route>
+        <Route path="/vanilla" element={<Vanilla />}></Route>
+      </Routes>
+    </Router>
+    <Footer>
+      <p>
+        <a href="https://v-codes.io/">v-codes</a> © {new Date().getFullYear()}
+      </p>
+    </Footer>
+  </>
 )
 
 export { App }

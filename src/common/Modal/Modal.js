@@ -55,7 +55,7 @@ const Modal = ({ callback, title, children }) => {
           <ModalHeader className="modal-header">
             {title && <h2>{title}</h2>}
             <ModalButton onClick={handleClose} className="modal-button">
-              <Icon name="CLOSE" />
+              {/* <Icon name="CLOSE" /> */}
             </ModalButton>
           </ModalHeader>
           <div className="modal-content">{children}</div>
