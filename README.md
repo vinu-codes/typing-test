@@ -22,7 +22,11 @@ You can find the React version & Vanilla version in the navigation of the applic
 
 ## 📝 What I've Learnt
 
-- Problem I solved: how to check the characters of the quote with each character of the input, ensuring to check the position also correlates.
+- Problems I solved:
+
+1. How to check the characters of the quote with each character of the input, ensuring to check the position also correlates.
+2. I wanted to automatically fetch quote once the current quote has been typed correctly. Solution: executed `checkIfCorrect()` inside of a `useEffect` hook to check for changes in the `result` state variable. Utilised the `result.every()` array helper method to return true if every `item.className` is 'correct', or return `false` if test is not passed as true.
+
 - Strengthened understanding of core Javascript concepts, such as DOM manipulation, event handling and async data fetching with fetch API.
 - Vanilla JavaScript requires explicit updates and refreshes to the DOM for every change, typically involving methods like document.createElement() and element.appendChild(). This can be verbose and error-prone, especially for complex interfaces. VS React.js library utilizes a Virtual DOM to efficiently manage updates. React's declarative API simplifies UI development. The primary method for DOM interaction in React is through ReactDOM.render(), which ensures efficient and minimal updates to the actual DOM.
 - Improved skills in using Git for version control- resolving merge conflicts.
