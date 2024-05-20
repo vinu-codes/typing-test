@@ -49,26 +49,42 @@ const NavBar = styled.nav`
   }
 `
 
+const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+`
+
 const App = () => (
-  <Router>
-    <div>
-      <NavBar>
-        <span>TypeTest 💬</span>
-        <ul>
-          <li>
-            <Link to="/">React</Link>
-          </li>
-          <li>
-            <Link to="/vanilla">Vanilla</Link>
-          </li>
-        </ul>
-      </NavBar>
-    </div>
-    <Routes>
-      <Route path="/" element={<ReactFeature />}></Route>
-      <Route path="/vanilla" element={<Vanilla />}></Route>
-    </Routes>
-  </Router>
+  <>
+    <Router>
+      <div>
+        <NavBar>
+          <span>TypeTest 💬</span>
+          <ul>
+            <li>
+              <Link to="/">React</Link>
+            </li>
+            <li>
+              <Link to="/vanilla">Vanilla</Link>
+            </li>
+          </ul>
+        </NavBar>
+      </div>
+      <Routes>
+        <Route path="/" element={<ReactFeature />}></Route>
+        <Route path="/vanilla" element={<Vanilla />}></Route>
+      </Routes>
+    </Router>
+    <Footer>
+      <p>
+        <a href="https://v-codes.io/">v-codes</a> © {new Date().getFullYear()}
+      </p>
+    </Footer>
+  </>
 )
 
 export { App }

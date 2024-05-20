@@ -76,7 +76,7 @@ const ReactFeature = () => {
   const [result, setResult] = useState([])
   const [caps, setCaps] = useState(false)
   const [modal, setModal] = useState(false)
-  const [timeRemaining, setTimeRemaining] = useState(3000)
+  const [timeRemaining, setTimeRemaining] = useState(30000)
 
   const getRandomQuote = async () => {
     try {
@@ -85,7 +85,7 @@ const ReactFeature = () => {
       const splitData = data.content.split('')
       const newDataStructure = applyDataStructure(splitData)
       setResult(newDataStructure)
-      setTimeRemaining(3000)
+      setTimeRemaining(30000)
     } catch (error) {
       console.error(error)
       setResult([])

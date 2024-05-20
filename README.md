@@ -33,4 +33,4 @@ You can find the React version & Vanilla version in the navigation of the applic
 
 ## 💡 Improvements
 
-- **Summary After Each Test:** When you finish a test, you get a detailed report of your speed, score, and mistakes.
+- **Summary After Each Test:** When you finish a test, you get a detailed report of your speed, score, and mistakes. Includes a WPM calculation.

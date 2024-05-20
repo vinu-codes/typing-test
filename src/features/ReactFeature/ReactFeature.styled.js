@@ -10,6 +10,7 @@ const Container = styled.div`
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  position: relative;
   .quote-input {
     font-family: 'Roboto', sans-serif;
     background: transparent;
@@ -29,13 +30,15 @@ const Container = styled.div`
   }
 
   .timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: black;
-    position: absolute;
-    top: 10rem;
     font-size: 3rem;
     font-weight: bold;
     display: flex;
     flex-direction: column;
+    margin-bottom: 16px;
     span {
       font-size: 30px;
     }

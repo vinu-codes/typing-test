@@ -22,13 +22,10 @@ const Button = styled.button`
   cursor: pointer;
 `
 
-const wpmFn = (data) => {}
-
 const ModalContents = ({ children, callback, data }) => {
   return (
     <Container>
       <div className="time">Total Time: 30 min</div>
-      <div className="wpm">WPM:{wpmFn(data)}</div>
       <div className="mistakes">Mistakes: {children}</div>
       <Button onClick={() => callback({ action: 'play_again', value: true })}>
         Play Again!
