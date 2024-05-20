@@ -11,6 +11,7 @@ const NavBar = styled.nav`
   border-bottom: 2px solid black;
   padding: 12px;
   display: flex;
+  align-items: center;
   span {
     color: white;
     font-size: 24px;
@@ -32,13 +33,13 @@ const NavBar = styled.nav`
     }
     a {
       text-decoration: none;
-      color: #596764;
+      color: grey;
       font-weight: bold;
       font-size: 16px;
       font-family: sans-serif;
       cursor: pointer;
       &:hover {
-        background: #2c3534;
+        background: lightgrey;
         padding: 10px;
         border-radius: 8px;
         font-size: 16px;
@@ -52,7 +53,7 @@ const App = () => (
   <Router>
     <div>
       <NavBar>
-        <span>TypeTest</span>
+        <span>TypeTest 💬</span>
         <ul>
           <li>
             <Link to="/">React</Link>

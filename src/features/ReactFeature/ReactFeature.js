@@ -169,14 +169,6 @@ const ReactFeature = () => {
         <span>TIMER</span>
         {timeRemaining}
       </div>
-      <div className="controls" id="controls">
-        <div className="error" id="error">
-          {errors ? errors : 'Errors: 0'}
-        </div>
-        <div className="caps" id="caps">
-          {!!caps ? 'Caps Lock: on' : 'Caps Lock: off'}
-        </div>
-      </div>
       <div className="container">
         <div className="quote-display" id="quote">
           {renderApiQuote()}
@@ -191,6 +183,14 @@ const ReactFeature = () => {
           onKeyPress={handleKeyPress}
           onKeyUp={handleKeyPress}
         ></textarea>
+        <div className="controls" id="controls">
+          <div className="error" id="error">
+            {errors ? `Errors: ${errors}` : 'Errors: 0'}
+          </div>
+          <div className="caps" id="caps">
+            {!!caps ? 'Caps Lock: on' : 'Caps Lock: off'}
+          </div>
+        </div>
       </div>
     </Container>
   )

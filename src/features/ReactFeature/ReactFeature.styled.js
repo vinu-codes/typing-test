@@ -31,7 +31,7 @@ const Container = styled.div`
   .timer {
     color: black;
     position: absolute;
-    top: 5rem;
+    top: 10rem;
     font-size: 3rem;
     font-weight: bold;
     display: flex;
@@ -52,27 +52,26 @@ const Container = styled.div`
   }
 
   .controls {
-    background: transparent;
+    background: lightgrey;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    width: 700px;
-    max-width: 90%;
-    margin-bottom: 1rem;
+    width: 100%;
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     gap: 5rem;
     .score {
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: thin;
     }
     .caps {
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: thin;
     }
     .error {
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: thin;
     }
   }
@@ -81,7 +80,7 @@ const Container = styled.div`
     margin-bottom: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .correct {

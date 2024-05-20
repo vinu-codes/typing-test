@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Container = styled.div`
   background-color: transparent;
   box-sizing: border-box;
-  background: lightblue;
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,7 +13,7 @@ const Container = styled.div`
   .quote-input {
     font-family: 'Roboto', sans-serif;
     background: transparent;
-    border: 2px solid #a1922e;
+    border: 2px solid lightgrey;
     outline: none;
     width: 100%;
     height: 8rem;
@@ -29,15 +29,20 @@ const Container = styled.div`
   }
 
   .timer {
-    color: palegoldenrod;
+    color: black;
     position: absolute;
-    top: 5rem;
+    top: 10rem;
     font-size: 3rem;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 30px;
+    }
   }
 
   .container {
-    background: palegoldenrod;
+    background: transparent;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -47,23 +52,26 @@ const Container = styled.div`
   }
 
   .controls {
-    background: palegoldenrod;
+    background: lightgrey;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    width: 700px;
-    max-width: 90%;
-    margin-bottom: 1rem;
+    width: 100%;
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
     gap: 5rem;
     .score {
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: thin;
     }
     .caps {
-      font-size: 1.4rem;
+      font-size: 1rem;
+      font-weight: thin;
+    }
+    .error {
+      font-size: 1rem;
       font-weight: thin;
     }
   }
@@ -72,7 +80,7 @@ const Container = styled.div`
     margin-bottom: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .correct {
