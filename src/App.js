@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Vanilla } from '@features/Vanilla'
 import { ReactFeature } from '@features/ReactFeature'
 import styled from 'styled-components'
+import './styles.css'
 
 const NavBar = styled.nav`
   background-color: white;

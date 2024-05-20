@@ -7,6 +7,11 @@ const executeVanilla = () => {
   const quoteElement = document.getElementById('quote')
   const quoteInputElement = document.getElementById('quoteInput')
   const timerElement = document.getElementById('timer')
+  const capsElement = document.getElementById('caps')
+  const scoreElement = document.getElementById('score')
+
+  capsElement.innerText = 'Caps Lock:'
+  scoreElement.innerText = 'Errors:'
 
   quoteInputElement.addEventListener('input', () => {
     // get all the spans in the quoteElement
@@ -86,6 +91,10 @@ const Vanilla = () => {
       {' '}
       <div className="timer" id="timer">
         0
+      </div>
+      <div className="controls" id="controls">
+        <div className="score" id="score"></div>
+        <div className="caps" id="caps"></div>
       </div>
       <div className="container">
         <div className="quote-display" id="quote"></div>

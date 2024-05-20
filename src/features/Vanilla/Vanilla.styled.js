@@ -3,9 +3,9 @@ import styled from 'styled-components'
 const Container = styled.div`
   background-color: transparent;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
-  background: #1e0555;
+  background: lightblue;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -31,7 +31,7 @@ const Container = styled.div`
   .timer {
     color: palegoldenrod;
     position: absolute;
-    top: 3rem;
+    top: 5rem;
     font-size: 3rem;
     font-weight: bold;
   }
@@ -44,6 +44,28 @@ const Container = styled.div`
     padding: 1rem;
     width: 700px;
     max-width: 90%;
+  }
+
+  .controls {
+    background: palegoldenrod;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 700px;
+    max-width: 90%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    .score {
+      font-size: 1.4rem;
+      font-weight: thin;
+    }
+    .caps {
+      font-size: 1.4rem;
+      font-weight: thin;
+    }
   }
 
   .quote-display {
